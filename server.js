@@ -3,6 +3,9 @@ import expressEjsLayouts from "express-ejs-layouts";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import indexRouter from "./routes/index.js"
+import mongoose from "mongoose"
+import "dotenv/config";
+
 
 const app = express();
 
@@ -14,6 +17,11 @@ app.set('layout', 'layouts/layout');
 app.use(expressEjsLayouts);
 app.use(express.static(join(__dirname, 'public')));
 
+mongoose.connect(process.env.DATABASEURL);
+
+const db = mongoose.connection;
+db.on('error', error =>console.log(error));
+db.once('open', () => console.log('Connected to MongoDB'));
 
 app.use("/", indexRouter);
 
