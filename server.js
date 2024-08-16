@@ -19,7 +19,7 @@ app.set('layout', 'layouts/layout');
 app.use(expressEjsLayouts);
 app.use(express.static(join(__dirname, 'public')));
 
-mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/pagePilot");
+mongoose.connect(process.env.DATABASEURL);
 
 const db = mongoose.connection;
 db.on('error', error =>console.log(error));
