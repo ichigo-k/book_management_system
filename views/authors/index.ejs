@@ -1,0 +1,22 @@
+<div class="w-full flex justify-between p-2 items-center ">
+
+    <form action="/authors" method="get">
+        
+    <input type="text" name="name" placeholder="Search..." class="ring-1 ring-indigo-600 rounded-md p-1 mt-2 focus:outline-none " value="<%=search %>" >
+    <button type="submit" class="bg-indigo-500 text-white p-1 rounded-md">
+        search
+    </button>
+    </form>
+
+    <a href="/authors/new" class="bg-cyan-500 text-white p-2 rounded-md shadow-lg ">Add Author</a>
+</div>
+
+<hr/>
+
+<div class="w-full mt-3 flex flex-col gap-y-3 p-2 ">
+    <% authors.forEach(author =>{%>
+        <div>
+            <h2 class="text-lg font-bold text-gray-600"><%= author.name %></h2>
+        </div>
+    <% }) %>
+</div>
