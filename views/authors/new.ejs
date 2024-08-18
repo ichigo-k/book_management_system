@@ -1,0 +1,16 @@
+<h2 class="font-bold text-3xl mt-3 p-2 bg-cyan-2 ">New Author</h2>
+
+<hr/>
+
+<form action="/authors" method="post" class="flex flex-col max-w-md mx-auto mt-5" >
+
+    <%- include('../partials/errorMessage.ejs')  %>
+    <%- include('_form_fields')  %>
+    
+    <div class="space-x-6 mt-5">
+        
+        <a href="/authors" class="text-white bg-red-500 rounded-md p-2">Cancel</a>
+        <button type="submit" class="text-white bg-indigo-500 p-2 rounded-md">Create</button>
+    </div>
+  
+</form>
