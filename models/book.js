@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import path from "path";
 
 
-export const coverImagePath = "uploads/bookCovers";
+export const coverImagePath = process.env.BookPath || "uploads/bookCovers";
 
 const bookSchema = new mongoose.Schema({
     title:{
