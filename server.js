@@ -10,7 +10,7 @@ import bodyParser from "body-parser";
 
 import indexRouter from "./routes/index.js"
 import authorRouter from "./routes/authors.js"
-
+import bookRouter from "./routes/books.js"
 
 
 const app = express();
@@ -31,6 +31,8 @@ db.once('open', () => console.log('Connected to MongoDB'));
 
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
+
 
 const apiUrl = process.env.APPURL ;
 
@@ -38,7 +40,6 @@ const apiUrl = process.env.APPURL ;
 async function makeApiRequest() {
   try {
     const response = await axios.get(apiUrl);
-    console.log(`API responded with status: ${response.status}`);
   } catch (error) {
     console.error('Error making API request:', error.message);
   }

@@ -1,0 +1,25 @@
+<div class="p-4 mx-auto w-full xl:max-w-7xl max-w-2xl bg-gradient-to-r from-blue-200 to-pink-200 rounded-lg shadow-lg flex flex-col items-center mt-3 ">
+    <h2 class="text-2xl mt-2 font-bold text-center text-gray-800">Find Your Next Favorite Book</h2>
+    <form action="/books" method="get" class="max-md:w-full w-[60%] xl:w-[40%] mt-4">
+        <div class="mb-4">
+            <label for="title" class="text-md font-semibold text-gray-700">Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter book title" class="focus:outline-none focus:ring-2 focus:ring-indigo-300 rounded-md p-2 mt-2 w-full border border-gray-300" value="<%= search.title %>">
+        </div>
+
+        <div class="flex gap-4 mb-4">
+            <div class="w-1/2">
+                <label for="publishedAfter" class="text-md font-semibold text-gray-700">Published After</label>
+                <input type="date" id="publishedAfter" name="publishedAfter" class="focus:outline-none focus:ring-2 focus:ring-indigo-300 rounded-md p-2 mt-2 w-full border border-gray-300" value="<%= search.publishedAfter %>">
+            </div>
+
+            <div class="w-1/2">
+                <label for="publishedBefore" class="text-md font-semibold text-gray-700">Published Before</label>
+                <input type="date" id="publishedBefore" name="publishedBefore" class="focus:outline-none focus:ring-2 focus:ring-indigo-300 rounded-md p-2 mt-2 w-full border border-gray-300" value="<%= search.publishedBefore %>">
+            </div>
+        </div>
+
+        <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold p-2 rounded-md w-full mt-4 transition-all duration-300">
+            Search
+        </button>
+    </form>
+</div>

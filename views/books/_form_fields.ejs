@@ -1,0 +1,32 @@
+<label for="" class="text-xl font-semibold text-gray-800 ">Title</label>
+<input type="text" name="title" placeholder="Enter book name" class="ring-1 ring-indigo-600 rounded-md p-1 mt-2 focus:outline-none " value="<%= book.title %>">
+
+<label for="" class="text-xl font-semibold text-gray-800 ">Author</label>
+<select name="author" id="" class="ring-1 ring-indigo-600 rounded-md p-1 mt-2 focus:outline-none ">
+    <% authors.forEach(author => {%>
+        <%if (author.id === book.author) {%>
+            <option selected  label="<%= author.name%>" value="<%= author.id%>"></option>
+        <%} else{%>
+            <option label="<%= author.name%>" value="<%= author.id%>"></option>
+        <% }%>
+    <%}); %>
+</select>
+
+
+<label for="" class="text-xl font-semibold text-gray-800 ">Publish Date</label>
+<input type="date" name="publishedDate" placeholder="Enter Authors name " class="ring-1 ring-indigo-600 rounded-md p-1 mt-2 focus:outline-none " 
+
+
+
+>
+
+<label for="" class="text-xl font-semibold text-gray-800 ">Page Count</label>
+<input type="number" name="pageCount" placeholder="Enter Authors name " class="ring-1 ring-indigo-600 rounded-md p-1 mt-2 focus:outline-none " value="<%= book.pageCount%>"  min="1">
+
+<label for="" class="text-xl font-semibold text-gray-800 ">Cover</label>
+<input type="file" name="cover" placeholder="Enter Authors name " class="ring-1 ring-indigo-600 rounded-md p-1 mt-2 focus:outline-none " >
+
+<label for="" class="text-xl font-semibold text-gray-800 ">Description</label>
+<textarea type="text" name="description"  class="ring-1 ring-indigo-600 rounded-md mt-2 focus:outline-none ">
+    <%= book.description %>
+</textarea>
