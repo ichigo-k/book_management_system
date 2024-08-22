@@ -13,10 +13,12 @@
 
 <hr/>
 
-<div class="w-full mt-3 flex flex-col gap-y-3 p-2 ">
-    <% authors.forEach(author =>{%>
-        <div>
-            <h2 class="text-lg font-bold text-gray-600"><%= author.name %></h2>
-        </div>
-    <% }) %>
+<div class="w-full mt-5 flex justify-center ">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-4">
+        <% authors.forEach(author => { %>
+            <div class="flex flex-col items-center">
+                <img src="<%= author.ProfilePicURL %>" alt="book" class="w-40 h-60 object-cover rounded-md shadow-lg">
+            </div>
+        <% }) %>
+    </div>
 </div>
